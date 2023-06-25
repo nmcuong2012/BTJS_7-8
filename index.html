@@ -22,10 +22,10 @@
         </div>
         <div class="input-array">
             <input type="number" name="" id="array-value">
-            <button id="add-number" class="btn-submit">Thêm số</button>
+            <button class="btn-submit" onclick="addArray()">Thêm số</button>
         </div>
         <div class="array-display">
-            <label class="lbl"></label>
+            <label class="lbl" id="lbl-array"></label>
         </div>
         <div class="content">
             <div id="accordion">
@@ -38,7 +38,7 @@
                   </div>
                   <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                     <div class="card-body">
-                      <button class="btn-submit">Tính tổng</button>
+                      <button class="btn-submit" onclick="sumNumber ()">Tính tổng</button>
                       <label class="lbl" id="lbl-sum"></label>
                     </div>
                   </div>
@@ -52,7 +52,7 @@
                   </div>
                   <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
-                        <button class="btn-submit">Đếm số</button>
+                        <button class="btn-submit" onclick="countNumber()">Đếm số</button>
                         <label class="lbl" id="lbl-count"></label>
                     </div>
                   </div>
@@ -66,7 +66,7 @@
                   </div>
                   <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
-                        <button class="btn-submit">Tìm số nhỏ nhất</button>
+                        <button class="btn-submit" onclick="minArray()">Tìm số nhỏ nhất</button>
                         <label class="lbl" id="lbl-min"></label>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
                     </div>
                     <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
-                        <button class="btn-submit">Tìm số dương nhỏ nhất</button>
+                        <button class="btn-submit" onclick="minPositive ()">Tìm số dương nhỏ nhất</button>
                         <label class="lbl" id="lbl-minNumber"></label>
                       </div>
                     </div>
@@ -92,7 +92,7 @@
                     </div>
                     <div id="collapseFive" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
-                        <button class="btn-submit">Tìm số chẵn</button>
+                        <button class="btn-submit" onclick="lastPositive()">Tìm số chẵn</button>
                         <label class="lbl" id="lbl-lastNumber"></label>
                       </div>
                     </div>
@@ -107,7 +107,7 @@
                       <div class="card-body">
                         <input type="number" id="inputSwap1" class="inputSwap" placeholder="Nhập vị trí số 1">
                         <input type="number" id="inputSwap2" class="inputSwap" placeholder="Nhập vị trí số 2">
-                        <button class="btn-submit">Đổi chỗ</button>
+                        <button class="btn-submit" onclick=" swapElements ()">Đổi chỗ</button>
                         <label class="lbl" id="lbl-swapNumber"></label>
                       </div>
                     </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div id="collapseSeven" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
-                        <button class="btn-submit">Sắp xếp</button>
+                        <button class="btn-submit" onclick="sortArray()">Sắp xếp</button>
                         <label class="lbl" id="lbl-sortNumber"></label>
                       </div>
                     </div>
@@ -134,7 +134,7 @@
                     </div>
                     <div id="collapseEight" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
-                        <button class="btn-submit">Tìm số nguyên tố</button>
+                        <button class="btn-submit" onclick="firstPrime()">Tìm số nguyên tố</button>
                         <label class="lbl" id="lbl-ntNumber"></label>
                       </div>
                     </div>
@@ -169,7 +169,6 @@
                       </div>
                     </div>
                   </div>
-    
               
             </div>
         </div>
