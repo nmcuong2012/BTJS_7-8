@@ -9,7 +9,7 @@ function addArray()
   {
     arr.push(value);
 
-    document.getElementById('lbl-array').textContent= arr.join(' ,');
+    document.getElementById('lbl-array').textContent= arr.join(',');
   }
   input.value = '';
   console.log(arr)
@@ -121,30 +121,83 @@ function sortArray() {
 
 // Số nguyên tố đầu tiên trong mảng
 
-function firstPrime(index) {
+
+//Hàm kiểm tra số nguyên tố
+function checkPrime(n) {
+  if (n < 2) return false;
+  for (let r = 2; r <= Math.sqrt(n); r++) {
+    if (n % r === 0) return false;
+  }
+  return true;
+}
+
+function firstPrime() {
   let result = addArray();
-  let firstPrime = null;
+  let foundPrime = false; 
+  let primeNumber; 
+  
+  for (let i = 0; i < result.length; i++) {
+    if (checkPrime(result[i])) {
+      primeNumber = result[i];
+      foundPrime = true;
+      break;
+    }
+  }
+  
+  if (foundPrime) {
+    document.getElementById('lbl-ntNumber').textContent = 'Số nguyên tốt đầu tiên trong mảng : ' + primeNumber;
+  } else {
+    document.getElementById('lbl-ntNumber').textContent = 'Không có số nguyên tố nào trong mảng !'
+  }
+}
+
+// Hàm kiểm tra số dạng FLOAT
+let arrayCount = [];
+function numberFloat()
+{
+  let number = +document.getElementById('inputCount').value;
+  arrayCount.push(number);
+  document.getElementById('lbl-arrayCount').textContent =  arrayCount;
+}
+
+function findInt() {
+  let n = 0
+  for (let i = 0; i < arrayCount.length; i++) 
+    Number.isInteger(arrayCount[i]) && n++;
+    document.getElementById('lbl-countNumber').textContent = "Số nguyên: " + n
+}
+
+/// So sánh số nguyên dương và âm
+function compareNumber()
+{
+  let result = addArray();
+  let n = 0 ;
+  let m = 0;
   for (let i = 0; i < result.length; i++)
   {
-    if (result[i] ==2)
+    if (result[i] > 0)
+      {
+        n++;
+      }
+    else if(result[i] < 0)
     {
-      firstPrime = result[i];
-      break;
+      m++;
     }
-    else if(result[i] % i != 0 && result[i] >= 2)
-    {
-      firstPrime = result[i];
-      break;
-    }
-   
+    
   }
-  if(firstPrime != null)
+  if(m > n )
   {
-    document.getElementById('lbl-ntNumber').textContent = 'Số nguyên tố đầu tiên ' + firstPrime;
+    document.getElementById('lbl-compNumber').textContent = 'Số âm ' + m + ' > Số dương ' + n; 
+  }
+  else if(m < n)
+  {
+    document.getElementById('lbl-compNumber').textContent = 'Số âm ' + m + ' < Số dương ' + n;
   }
   else
   {
-      document.getElementById('lbl-ntNumber').textContent = 'Không tìm thấy số nguyên tốt trong mảng ';
+    document.getElementById('lbl-compNumber').textContent = 'Số âm ' + m + '= Số dương ' + n;
   }
 }
+
+
 

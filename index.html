@@ -148,10 +148,11 @@
                     <div id="collapseNine" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
                         <div>
-                            <input type="number" id="inputCount" class="inputSwap" placeholder="Nhập vị trí số 1">
-                            <button class="btn-submit">Nhập số</button>
+                            <input type="number" id="inputCount" class="inputSwap" placeholder="Nhập số">
+                            <button class="btn-submit" onclick="numberFloat()">Nhập số</button>
+                            <label class="lbl" id="lbl-arrayCount"></label>
                         </div>
-                        <button class="btn-submit">Đếm số nguyên</button>
+                        <button class="btn-submit" onclick="findInt()">Đếm số nguyên</button>
                         <label class="lbl" id="lbl-countNumber"></label>
                       </div>
                     </div>
@@ -164,7 +165,7 @@
                     </div>
                     <div id="collapseTen" class="collapse" data-bs-parent="#accordion">
                       <div class="card-body">
-                        <button class="btn-submit">So Sánh</button>
+                        <button class="btn-submit" onclick="compareNumber()">So Sánh</button>
                         <label class="lbl" id="lbl-compNumber"></label>
                       </div>
                     </div>
